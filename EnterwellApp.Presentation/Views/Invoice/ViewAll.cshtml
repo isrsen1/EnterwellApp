@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EnterwellApp.Presentation.Models.InvoiceVM>
+
+@{
+    ViewBag.Title = "ViewAll";
+}
+
+<h2>ViewAll</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceCreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceDueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPriceNoTax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPriceWithTax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceCreator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceRecipient)
+        </th>
+        <th></th>
+    </tr>
+@if(Model != null) {
+    foreach (var item in Model) { 
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceCreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceDueDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPriceNoTax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPriceWithTax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceCreator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceRecipient)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+}
+
+</table>

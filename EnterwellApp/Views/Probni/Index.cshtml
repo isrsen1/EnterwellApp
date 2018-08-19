@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Naziv</h2>
+@foreach(var p in ViewBag.ListaProizvoda)
+{
+    <p> @p.Id </p>
+    <p> @p.Naziv</p>
+}
+
